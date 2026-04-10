@@ -36,16 +36,26 @@ export default async function ProjectPage({ params }) {
   return (
     <main className="page-enter pt-[104px] pb-[30px]">
       <div className="flex flex-col md:flex-row">
-        {/* Left: sticky sidebar */}
-        <aside className="w-full md:w-[330px] shrink-0 md:sticky md:top-[104px] md:self-start flex flex-col gap-[20px] mb-[40px] md:mb-0">
+
+        {/* Mobile only: Title + Description (order-1 → appears first on mobile) */}
+        <div className="md:hidden flex flex-col gap-[12px] font-exposure text-[16px] text-white tracking-[-0.64px] leading-normal mb-[20px]">
+          <p>{project.name}</p>
+          {project.description && (
+            <p className="whitespace-pre-line">{project.description}</p>
+          )}
+        </div>
+
+        {/* Left: sticky sidebar — on mobile appears after gallery (order-3) */}
+        <aside className="w-full md:w-[330px] shrink-0 md:sticky md:top-[104px] md:self-start flex flex-col gap-[20px] order-3 md:order-none mt-[40px] md:mt-0 mb-[40px] md:mb-0">
           <Link
             href="/"
-            className="font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal hover:underline"
+            className="font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal hover:text-white transition-colors"
           >
             ↵ Back
           </Link>
 
-          <div className="flex flex-col gap-[12px] font-exposure text-[16px] text-white tracking-[-0.64px] leading-normal">
+          {/* Desktop only: Title + Description inside sidebar */}
+          <div className="hidden md:flex flex-col gap-[12px] font-exposure text-[16px] text-white tracking-[-0.64px] leading-normal">
             <p>{project.name}</p>
             {project.description && (
               <p className="whitespace-pre-line">{project.description}</p>
@@ -64,11 +74,24 @@ export default async function ProjectPage({ params }) {
                 <p className="font-exposure text-[16px] text-white tracking-[-0.64px] leading-normal">
                   Credits
                 </p>
-                {project.credits.map((credit, i) => (
-                  <p key={i} className="font-montreal text-[12px] text-white/80 tracking-[-0.48px] leading-normal">
-                    {credit.name}{credit.role ? ` • ${credit.role}` : ''}
-                  </p>
-                ))}
+                {project.credits.map((credit, i) => {
+                  const label = `${credit.name}${credit.role ? ` • ${credit.role}` : ''}`
+                  return credit.url ? (
+                    <a
+                      key={i}
+                      href={credit.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-montreal text-[12px] text-white/80 tracking-[-0.48px] leading-normal hover:text-white transition-colors"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <p key={i} className="font-montreal text-[12px] text-white/80 tracking-[-0.48px] leading-normal">
+                      {label}
+                    </p>
+                  )
+                })}
               </div>
             )}
           </div>
@@ -94,8 +117,8 @@ export default async function ProjectPage({ params }) {
         {/* Spacer */}
         <div className="hidden md:block w-[370px] shrink-0" />
 
-        {/* Right: media */}
-        <div className="w-full md:flex-1 flex flex-col gap-[20px]">
+        {/* Right: media — on mobile appears second (order-2), after title+desc */}
+        <div className="w-full md:flex-1 flex flex-col gap-[20px] order-2 md:order-none">
           {mediaItems.map((item, i) => {
             if (item._type === 'mediaImage') {
               const img = item.image ?? item
