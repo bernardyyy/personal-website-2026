@@ -38,9 +38,10 @@ export const about = defineType({
           type: 'object',
           fields: [
             defineField({ name: 'name', title: 'Service', type: 'string' }),
+            defineField({ name: 'description', title: 'Description', type: 'string' }),
           ],
           preview: {
-            select: { title: 'name' },
+            select: { title: 'name', subtitle: 'description' },
           },
         },
       ],

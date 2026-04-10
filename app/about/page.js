@@ -34,7 +34,7 @@ export default async function AboutPage() {
         {/* Services */}
         <Section title="Services">
           {services.map((item, i) => (
-            <ExperienceItem key={i} title={item.name} />
+            <ExperienceItem key={i} title={item.name} subtitle={item.description} />
           ))}
         </Section>
 
