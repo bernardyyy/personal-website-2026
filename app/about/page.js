@@ -96,7 +96,7 @@ function ExperienceItem({ title, subtitle }) {
         {title}
       </p>
       {subtitle && (
-        <p className="font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal">
+        <p className="font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal text-balance">
           {subtitle}
         </p>
       )}
