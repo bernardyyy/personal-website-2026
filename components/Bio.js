@@ -83,12 +83,12 @@ export default function Bio({ mobile = false }) {
         Say hi on{' '}
         <HoverLink href="https://www.linkedin.com/in/bernardyy">LinkedIn</HoverLink>{' '}
         or check what I'm collecting on{' '}
-        <HoverLink href="https://www.are.na/bernard-gerber/channels">Are.na</HoverLink>.
+        <HoverLink href="https://www.are.na/bernard-gerber/channels">are.na</HoverLink>.
       </p>
       <p>
         And don't forget to follow along on{' '}
         <HoverLink href="https://www.instagram.com/bernard.gerber/">Instagram</HoverLink>{' '}
-        — or drop a cool email at{' '}
+        or drop a cool email at{' '}
         <HoverLink href="mailto:bernard@gerberworks.xyz" external={false}>
           bernard@gerberworks.xyz
         </HoverLink>
