@@ -35,11 +35,20 @@ export default async function ProjectPage({ params }) {
 
   return (
     <main className="page-enter pt-[104px] pb-[30px]">
+
+      {/* Mobile only: Back link at the very top */}
+      <Link
+        href="/"
+        className="md:hidden block font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal mb-[20px] hover:text-white transition-colors"
+      >
+        ↵ Back
+      </Link>
+
       <div className="flex flex-col md:flex-row">
 
         {/* Mobile only: Title + Description (order-1 → appears first on mobile) */}
         <div className="md:hidden flex flex-col gap-[12px] font-exposure text-[16px] text-white tracking-[-0.64px] leading-normal mb-[20px]">
-          <p>{project.name}</p>
+          <p className="w-1/2">{project.name}</p>
           {project.description && (
             <p className="whitespace-pre-line">{project.description}</p>
           )}
@@ -49,7 +58,7 @@ export default async function ProjectPage({ params }) {
         <aside className="w-full md:w-[330px] shrink-0 md:sticky md:top-[104px] md:self-start flex flex-col gap-[20px] order-3 md:order-none mt-[40px] md:mt-0 mb-[40px] md:mb-0">
           <Link
             href="/"
-            className="font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal hover:text-white transition-colors"
+            className="hidden md:block font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal hover:text-white transition-colors"
           >
             ↵ Back
           </Link>
