@@ -34,8 +34,8 @@ function HoverWord({ children, emoji, href }) {
       <span className="group-hover/word:font-exposure-bold">{children}</span>
       {visible && (
         <span
-          className="fixed pointer-events-none select-none z-50 leading-none"
-          style={{ left: pos.x + 14, top: pos.y - 10 }}
+          className="fixed pointer-events-none select-none z-50 leading-none text-[1.5rem]"
+          style={{ left: pos.x + 16, top: pos.y - 12 }}
         >
           {emoji}
         </span>

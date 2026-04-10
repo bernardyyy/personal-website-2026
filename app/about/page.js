@@ -17,7 +17,7 @@ export default async function AboutPage() {
       {/* Back link */}
       <Link
         href="/"
-        className="block font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal mb-[37px] hover:underline"
+        className="block font-montreal text-[14px] text-white/80 tracking-[-0.56px] leading-normal mb-[37px] hover:text-white transition-colors"
       >
         ↵ Back
       </Link>

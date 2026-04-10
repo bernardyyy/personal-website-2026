@@ -22,5 +22,5 @@ export default function Clock() {
     return () => clearInterval(interval)
   }, [])
 
-  return <span>{time}</span>
+  return <span className="text-white/80">{time}</span>
 }

@@ -52,6 +52,7 @@ export const project = defineType({
           fields: [
             defineField({ name: 'name', title: 'Name', type: 'string' }),
             defineField({ name: 'role', title: 'Role', type: 'string' }),
+            defineField({ name: 'url', title: 'Link (optional)', type: 'url' }),
           ],
           preview: {
             select: { title: 'name', subtitle: 'role' },
