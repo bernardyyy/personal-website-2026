@@ -76,7 +76,7 @@ export default function Bio({ mobile = false }) {
         <HoverWord emoji="🚴‍♂️" href="https://www.strava.com/athletes/50415101">
           bike
         </HoverWord>
-        , listening to <HoverWord emoji="📻">NTS</HoverWord> Radio 24/7, or drinking{' '}
+        , listening to <HoverWord emoji="📻" href="https://www.nts.live/">NTS Radio</HoverWord> 24/7, or drinking{' '}
         <HoverWord emoji="🧉">mate</HoverWord>.
       </p>
       <p>
