@@ -6,6 +6,12 @@ import Footer from '../components/Footer'
 export const metadata = {
   title: 'Bernard Gerber',
   description: 'Brazilian multidisciplinary designer based in Lisbon, Portugal.',
+  openGraph: {
+    title: 'Bernard Gerber',
+    type: 'website',
+    url: 'https://www.gerberworks.xyz',
+    images: [{ url: '/og_img.jpg' }],
+  },
 }
 
 export default function RootLayout({ children }) {
