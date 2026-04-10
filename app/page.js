@@ -1,24 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { client } from '../sanity/client'
-import { projectsQuery, aboutQuery } from '../sanity/queries'
+import { projectsQuery } from '../sanity/queries'
 import { urlFor } from '../sanity/imageUrl'
 import Bio from '../components/Bio'
 
 export const revalidate = 60
 
 export default async function HomePage() {
-  const [projects, about] = await Promise.all([
-    client.fetch(projectsQuery),
-    client.fetch(aboutQuery),
-  ])
+  const projects = await client.fetch(projectsQuery)
 
   return (
     <main className="pt-[80px] md:pt-[104px] pb-[30px]">
       <div className="flex">
         {/* Left: sticky bio */}
         <aside className="hidden md:block w-[330px] shrink-0 sticky top-[104px] self-start">
-          <Bio bio={about?.bio} />
+          <Bio />
         </aside>
 
         {/* Spacer */}
@@ -28,7 +25,7 @@ export default async function HomePage() {
         <div className="w-full md:flex-1 flex flex-col gap-[10px] md:gap-[20px]">
           {/* Mobile bio */}
           <div className="md:hidden mb-[14px]">
-            <Bio bio={about?.bio} mobile />
+            <Bio mobile />
           </div>
 
           {projects.map((project) => (

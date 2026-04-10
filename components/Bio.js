@@ -53,23 +53,9 @@ function HoverWord({ children, emoji, href }) {
   return inner
 }
 
-export default function Bio({ bio, mobile = false }) {
-  const baseClass = `font-exposure text-white leading-normal flex flex-col gap-[1em] ${mobile ? 'text-[14px] tracking-[-0.56px]' : 'text-[16px] tracking-[-0.64px]'}`
-
-  // If bio text comes from Sanity, render each paragraph
-  if (bio) {
-    return (
-      <div className={baseClass}>
-        {bio.split('\n').filter(Boolean).map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        ))}
-      </div>
-    )
-  }
-
-  // Fallback: hardcoded with hover interactions
+export default function Bio({ mobile = false }) {
   return (
-    <div className={baseClass}>
+    <div className={`font-exposure text-white leading-normal flex flex-col gap-[1em] ${mobile ? 'text-[14px] tracking-[-0.56px]' : 'text-[16px] tracking-[-0.64px]'}`}>
       <p>
         I'm a <HoverWord emoji="🇧🇷">Brazilian</HoverWord> multidisciplinary designer
         based in Lisbon, <HoverWord emoji="🇵🇹">Portugal</HoverWord>.
@@ -111,3 +97,4 @@ export default function Bio({ bio, mobile = false }) {
     </div>
   )
 }
+
