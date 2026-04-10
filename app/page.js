@@ -51,7 +51,7 @@ export default async function HomePage() {
 
               {/* Title + category row */}
               <div className="flex items-center justify-between">
-                <span className="font-exposure text-[14px] md:text-[16px] text-white tracking-[-0.56px] md:tracking-[-0.64px] leading-normal group-hover:font-exposure-bold">
+                <span className="font-exposure text-[14px] md:text-[16px] text-white tracking-[-0.56px] md:tracking-[-0.64px] leading-normal group-hover:font-exposure-bold text-balance">
                   {project.name}
                 </span>
                 <span className="font-montreal text-[12px] md:text-[14px] text-white tracking-[-0.48px] md:tracking-[-0.56px] leading-normal">
