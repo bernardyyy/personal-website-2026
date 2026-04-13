@@ -19,7 +19,7 @@ export default async function HomePage() {
         </aside>
 
         {/* Spacer */}
-        <div className="hidden md:block w-[370px] shrink-0" />
+        <div className="hidden md:block w-[60px] lg:w-[200px] xl:w-[370px] shrink-0" />
 
         {/* Right: project list */}
         <div className="w-full md:flex-1 flex flex-col gap-[10px] md:gap-[20px]">

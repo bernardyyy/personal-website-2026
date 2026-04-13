@@ -124,7 +124,7 @@ export default async function ProjectPage({ params }) {
         </aside>
 
         {/* Spacer */}
-        <div className="hidden md:block w-[370px] shrink-0" />
+        <div className="hidden md:block w-[60px] lg:w-[200px] xl:w-[370px] shrink-0" />
 
         {/* Right: media — on mobile appears second (order-2), after title+desc */}
         <div className="w-full md:flex-1 flex flex-col gap-[20px] order-2 md:order-none">

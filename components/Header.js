@@ -9,7 +9,7 @@ export default function Header() {
         <Link href="/" className="w-[330px] shrink-0 text-white/80 hover:text-white transition-colors">
           Bernard Gerber
         </Link>
-        <div className="w-[370px] shrink-0" />
+        <div className="w-[60px] lg:w-[200px] xl:w-[370px] shrink-0" />
         <div className="flex items-center justify-between flex-1">
           <Clock />
           <Link href="/about" className="text-white/80 hover:text-white transition-colors">About</Link>
