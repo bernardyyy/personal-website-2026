@@ -94,6 +94,11 @@ export default function Bio({ mobile = false }) {
         </HoverLink>
         .
       </p>
+      <p>
+        <HoverLink href="mailto:bernard@gerberworks.xyz" external={false}>
+          A full portfolio is under request.
+        </HoverLink>
+      </p>
     </div>
   )
 }
